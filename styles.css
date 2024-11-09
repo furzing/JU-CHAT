@@ -1,0 +1,69 @@
+/* General Styles */
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: 'Roboto', sans-serif;
+    color: #343a40; /* Dark gray text */
+}
+
+/* Main Title */
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #343a40;
+}
+
+/* Card Styles */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Upload Status Messages */
+#uploadStatus span {
+    font-weight: bold;
+}
+
+/* Chat History */
+#chatHistory p {
+    margin-bottom: 0.5rem;
+}
+
+/* Screen Share Video */
+#screenVideo {
+    max-height: 400px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Button Hover Animations */
+.btn-primary, .btn-success, .btn-warning, .btn-secondary, .btn-info, .btn-outline-primary {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover, .btn-success:hover, .btn-warning:hover, .btn-secondary:hover, .btn-info:hover, .btn-outline-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
