@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat JU - Interactive AI Tutor</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <!-- Top-Right Button -->
+    <a href="https://www.ju.edu.jo/" target="_blank" class="top-right-button">Connect the Chat Bot with UJ Website</a>
+
+    <!-- Main Title -->
+    <h1>Chat JU - Interactive AI Tutor</h1>
+
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+        <button class="tab-button active" data-tab="upload">Upload Textbook</button>
+        <button class="tab-button" data-tab="chat">Chat with AI</button>
+        <button class="tab-button" data-tab="screen-share">Screen Share</button>
+    </div>
+
+    <!-- Tabs Content -->
+    <div class="tab-content active" id="upload">
+        <h2>Upload Your Textbook</h2>
+        <input type="file" id="textbookUploader" accept=".pdf, .txt">
+        <button id="uploadButton">Upload</button>
+        <div id="uploadStatus"></div>
+    </div>
+
+    <div class="tab-content" id="chat">
+        <h2>Chat with AI Tutor</h2>
+        <div id="chatHistory"></div>
+        <input type="text" id="userQuestion" placeholder="Enter your question here...">
+        <button id="askButton">Submit</button>
+    </div>
+
+    <div class="tab-content" id="screen-share">
+        <h2>Screen Share</h2>
+        <button id="shareScreenButton">Start Screen Sharing</button>
+        <video id="screenVideo" autoplay></video>
+
+        <div id="screenChatInterface">
+            <input type="text" id="screenUserQuestion" placeholder="Ask about the screen content...">
+            <button id="screenAskButton">Ask</button>
+            <div id="screenResponseDisplay"></div>
+        </div>
+    </div>
+
+    <!-- Include Tesseract.js via CDN -->
+    <script src="https://unpkg.com/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+    <!-- Include Axios via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Include your script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
