@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat JU - Interactive AI Tutor</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top-Right Button -->
+    <a href="https://www.ju.edu.jo/" target="_blank" class="btn btn-primary position-fixed top-0 end-0 m-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Visit the University of Jordan Website">
+        <i class="fas fa-link me-2"></i>Connect with UJ
+    </a>
+
+    <!-- Main Container -->
+    <div class="container my-5">
+        <!-- Main Title -->
+        <h1 class="text-center mb-4">Chat JU - Interactive AI Tutor</h1>
+
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="upload-tab" data-bs-toggle="tab" data-bs-target="#upload" type="button" role="tab" aria-controls="upload" aria-selected="true">Upload Textbook</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chat-tab" data-bs-toggle="tab" data-bs-target="#chat" type="button" role="tab" aria-controls="chat" aria-selected="false">Chat with AI</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="screen-share-tab" data-bs-toggle="tab" data-bs-target="#screen-share" type="button" role="tab" aria-controls="screen-share" aria-selected="false">Screen Share</button>
+            </li>
+        </ul>
+
+        <!-- Tabs Content -->
+        <div class="tab-content mt-4" id="myTabContent">
+            <!-- Upload Textbook Tab -->
+            <div class="tab-pane fade show active" id="upload" role="tabpanel" aria-labelledby="upload-tab">
+                <div class="card p-4">
+                    <h2>Upload Your Textbook</h2>
+                    <div class="mb-3">
+                        <input type="file" id="textbookUploader" accept=".pdf, .txt" class="form-control">
+                    </div>
+                    <button id="uploadButton" class="btn btn-success">
+                        <i class="fas fa-upload me-2"></i>Upload
+                    </button>
+                    <div id="uploadStatus" class="mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Chat with AI Tab -->
+            <div class="tab-pane fade" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+                <div class="card p-4">
+                    <h2>Chat with AI Tutor</h2>
+                    <div id="chatHistory" class="border rounded p-3 mb-3" style="height: 300px; overflow-y: auto; background-color: #f8f9fa;"></div>
+                    <div class="input-group">
+                        <input type="text" id="userQuestion" class="form-control" placeholder="Enter your question here...">
+                        <button id="askButton" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screen Share Tab -->
+            <div class="tab-pane fade" id="screen-share" role="tabpanel" aria-labelledby="screen-share-tab">
+                <div class="card p-4">
+                    <h2>Screen Share</h2>
+                    <button id="shareScreenButton" class="btn btn-warning mb-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Share your screen to analyze its content">
+                        <i class="fas fa-desktop me-2"></i>Start Screen Sharing
+                    </button>
+                    <div class="mb-3">
+                        <video id="screenVideo" class="w-100 border rounded" autoplay></video>
+                    </div>
+                    <div id="screenChatInterface" class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="text" id="screenUserQuestion" class="form-control" placeholder="Ask about the screen content...">
+                            <button id="screenAskButton" class="btn btn-secondary">
+                                <i class="fas fa-paper-plane me-2"></i>Ask
+                            </button>
+                        </div>
+                        <div id="screenResponseDisplay" class="border rounded p-3" style="height: 150px; overflow-y: auto; background-color: #f8f9fa;"></div>
+                        <!-- Capture Text Now Button -->
+                        <button id="captureTextButton" class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-camera me-2"></i>Capture Text Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (Includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome for Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <!-- Tesseract.js via CDN -->
+    <script src="https://unpkg.com/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+    <!-- Axios via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Your Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
